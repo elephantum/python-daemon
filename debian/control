@@ -8,5 +8,6 @@ Homepage: http://pypi.python.org/pypi/python-daemon/
 
 Package: python-daemon
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+  python
 Description: Library to implement a well-behaved Unix daemon process.
