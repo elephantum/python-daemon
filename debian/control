@@ -1,0 +1,12 @@
+Source: python-daemon
+Section: unknown
+Priority: extra
+Maintainer: Andrey Tatarinov <a.tatarinov@hh.ru>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.7.3
+Homepage: http://pypi.python.org/pypi/python-daemon/
+
+Package: python-daemon
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library to implement a well-behaved Unix daemon process.
