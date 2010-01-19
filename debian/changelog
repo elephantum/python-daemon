@@ -1,3 +1,9 @@
+python-daemon (1.5.2~hh2) unstable; urgency=low
+
+  * fix repository; karmic -> unstable
+
+ -- Andrey Tatarinov <a.tatarinov@hh.ru>  Tue, 19 Jan 2010 17:18:44 +0400
+
 python-daemon (1.5.2~hh1) karmic; urgency=low
 
   * rebuild on ubuntu
