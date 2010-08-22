@@ -1,4 +1,4 @@
-This package was debianized by Andrey Tatarinov <a.tatarinov@hh.ru> on
+This package was debianized by Andrey Tatarinov <elephantum@yandex.ru> on
 Mon, 23 Nov 2009 12:56:22 +0300.
 
 It was downloaded from http://pypi.python.org/pypi/python-daemon/
@@ -63,7 +63,7 @@ License:
     Agreement.
 
 
-The Debian packaging is (C) 2009, Andrey Tatarinov <a.tatarinov@hh.ru> and
+The Debian packaging is (C) 2009, Andrey Tatarinov <elephantum@yandex.ru> and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
 # Please also look if there are files or directories which have a
