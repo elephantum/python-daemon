@@ -26,7 +26,7 @@ import signal
 import socket
 import atexit
 
-
+
 class DaemonError(Exception):
     """ Base exception class for errors from this module. """
 
@@ -38,7 +38,7 @@ class DaemonOSEnvironmentError(DaemonError, OSError):
 class DaemonProcessDetachError(DaemonError, OSError):
     """ Exception raised when process detach fails. """
 
-
+
 class DaemonContext(object):
     """ Context for turning the current program into a daemon process.
 
@@ -460,7 +460,7 @@ class DaemonContext(object):
             for (signal_number, target) in self.signal_map.items())
         return signal_handler_map
 
-
+
 def change_working_directory(directory):
     """ Change the working directory of this process.
         """
@@ -520,7 +520,7 @@ def change_process_owner(uid, gid):
             % vars())
         raise error
 
-
+
 def prevent_core_dump():
     """ Prevent this process from generating a core dump.
 
@@ -545,7 +545,7 @@ def prevent_core_dump():
     core_limit = (0, 0)
     resource.setrlimit(core_resource, core_limit)
 
-
+
 def detach_process_context():
     """ Detach the process context from parent and session.
 
@@ -555,7 +555,7 @@ def detach_process_context():
         Reference: “Advanced Programming in the Unix Environment”,
         section 13.3, by W. Richard Stevens, published 1993 by
         Addison-Wesley.
-    
+
         """
 
     def fork_then_exit_parent(error_message):
@@ -580,13 +580,13 @@ def detach_process_context():
     os.setsid()
     fork_then_exit_parent(error_message="Failed second fork")
 
-
+
 def is_process_started_by_init():
     """ Determine if the current process is started by `init`.
 
         The `init` process has the process ID of 1; if that is our
         parent process ID, return ``True``, otherwise ``False``.
-    
+
         """
     result = False
 
@@ -633,7 +633,7 @@ def is_process_started_by_superserver():
         attaches it to the standard streams of the child process. If
         that is the case for this process, return ``True``, otherwise
         ``False``.
-    
+
         """
     result = False
 
@@ -661,7 +661,7 @@ def is_detach_process_context_required():
 
     return result
 
-
+
 def close_file_descriptor_if_open(fd):
     """ Close a file descriptor if already open.
 
@@ -713,7 +713,7 @@ def close_all_open_files(exclude=set()):
         if fd not in exclude:
             close_file_descriptor_if_open(fd)
 
-
+
 def redirect_stream(system_stream, target_stream):
     """ Redirect a system stream to a specified file.
 
@@ -731,7 +731,7 @@ def redirect_stream(system_stream, target_stream):
         target_fd = target_stream.fileno()
     os.dup2(target_fd, system_stream.fileno())
 
-
+
 def make_default_signal_map():
     """ Make the default signal map for this system.
 
